@@ -4,5 +4,11 @@
     "price": 2023,
     "thumbnail": "www.bensimon.com",
     "id": 1
+  },
+  {
+    "title": "Pantalon Activation",
+    "price": 2024,
+    "thumbnail": "www.bensimon.com",
+    "id": 2
   }
 ]

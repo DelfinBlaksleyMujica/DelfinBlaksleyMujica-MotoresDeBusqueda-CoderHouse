@@ -1,5 +1,5 @@
 const Container = require("./container.js");
-const productos = new Container("./app/router/products/products.json");
+const productos = new Container("./router/products/products.json");
 const productosEnBase = require("./products.json");
 
 const express = require("express");
