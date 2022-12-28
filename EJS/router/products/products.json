@@ -1,14 +1,8 @@
 [
   {
-    "title": "Remera Activation",
-    "price": 2023,
-    "thumbnail": "www.bensimon.com",
+    "title": "Remera 1 ",
+    "price": "8800",
+    "thumbnail": "www.activa.com/imagen-1",
     "id": 1
-  },
-  {
-    "title": "Pantalon Activation",
-    "price": 2024,
-    "thumbnail": "www.bensimon.com",
-    "id": 2
   }
 ]

@@ -15,9 +15,23 @@ app.use("/api/productos" , router );
 app.use(express.static("public"));
 
 
-/*Peticiones Get*/
+const products = productosEnBase;
+router.get("/" , ( req , res ) => {
+    res.render( "pages/index" , { products, titulo:"Form Productos" } );
+})
 
-router.get("/", ( req , res ) => {
+router.get("/productsList" , ( req , res ) => {
+    res.render( "pages/productsList" , { products, titulo:"Form Productos" } );
+})
+
+router.post("/" , ( req , res ) => {
+    const obj = req.body;
+    productos.save(obj);
+    console.log( products );
+    res.render("pages/index" , { products , titulo:"Tabla resuelta"});
+})
+
+/*router.get("/", ( req , res ) => {
     try{
         console.log("Se muestran todos los productos correctamente");
         res.status(200).send({ productos: productosEnBase });
@@ -26,9 +40,9 @@ router.get("/", ( req , res ) => {
         console.log("Error en el get de producto");
         res.status(500).send({ message: error.message })
     }
-})
+})*/
 
-router.get("/:id", ( req , res ) => {
+/*router.get("/:id", ( req , res ) => {
     try{
         if (req.params) {
             const { id } = req.params;
@@ -44,11 +58,9 @@ router.get("/:id", ( req , res ) => {
         res.status(500).send({ message : error.message })
     }
     
-})
+})*/
 
-
-/*Peticiones Post*/
-router.post("/", ( req , res ) => {
+/*router.post("/", ( req , res ) => {
     try{
         if ( req.body.title && req.body.price && req.body.thumbnail ) {
         const obj = req.body;
@@ -65,11 +77,11 @@ router.post("/", ( req , res ) => {
     }
     
     
-})
+})*/
 
 /*Peticiones PUT*/
 
-app.put("/api/productos/:id", ( req , res ) => {
+/*app.put("/api/productos/:id", ( req , res ) => {
     if (req.params) {
         const { id } = req.params;
         const { titleAct , priceAct , thumbnailAct } = req.body;
@@ -84,12 +96,12 @@ app.put("/api/productos/:id", ( req , res ) => {
     
     
     res.send(productoAmodificar);
-})
+})*/
 
 
 /*Peticiones DELETE*/
 
-router.delete("/:id" , ( req , res ) => {
+/*router.delete("/:id" , ( req , res ) => {
     try {
         if (req.params) {
             const { id } = req.params;
@@ -107,7 +119,7 @@ router.delete("/:id" , ( req , res ) => {
             console.log("Error en el get del producto");
         res.status(500).send({ message : error.message })
     }
-})
+})*/
 
 
 
