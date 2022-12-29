@@ -1,0 +1,34 @@
+html 
+    head
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous") 
+        title=titulo 
+    body(class="container")
+        header 
+            nav(class="navbar navbar-expand-lg navbar-light bg-light")
+                a(class="navbar-brand" href="/api/productos")=empresa
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item")
+                        a(class="nav-link" href="/api/productos/")="Products Mangment"
+                    li(class="nav-item")
+                        a(class="nav-link" href="/api/productos/productsList")="Products List"
+        main
+            div(class="container mt-3")
+                div(class="jumbotron")
+                    h1(style="color:black")=mensaje
+                    br            
+                    form(action="/api/productos" method="post")
+                        div(class="form-group")
+                            label(for="title")
+                                b=title
+                            input#title(class="form-control" type="text" name="title" ) 
+                        div(class="form-group")
+                            label(for="price")
+                                b=price 
+                            input#price(class="form-control" type="number" name="price" ) 
+                        div(class="form-group")
+                            label(for="thumbnail")
+                                b=thumbnail
+                            input#thumbnail(class="form-control" type="text" name="thumbnail" )          
+                        button(class="btn btn-dark btn-succes mt-3 mb-5")="Enviar"    
+        footer
+            p( class="text-center text-muted")="©Copyright 2022 Space Syntax"
