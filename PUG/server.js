@@ -9,7 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine" , "pug" );
 app.set("views" , "./views");
 
-
 app.use("/api/productos" , products );
 
 const PORT = 8080;
