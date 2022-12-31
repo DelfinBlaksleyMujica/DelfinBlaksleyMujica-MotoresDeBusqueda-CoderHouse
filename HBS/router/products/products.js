@@ -23,7 +23,7 @@ router.get("/", function ( req , res ) {
 let arrayLength = products.length > 0 ? true : false;
 
 router.get("/productsList", function ( req , res ) {
-    res.render("productsList" , { suggestedChamps:products , listExists: arrayLength  });
+    res.render("productsList" , { productos:products , listExists: arrayLength  });
 })
 
 router.post("/" , ( req , res ) => {
